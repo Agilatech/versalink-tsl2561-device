@@ -2,7 +2,7 @@
   "name": "versalink-tsl2561-device",
   "version": "0.8.0",
   "description": "TSL2561 luminosity device driver for use in the Agilatech VersaLink system",
-  "main": "tsl2561.js",
+  "main": "tsl2561-scout.js",
   "directories": {
     "example": "example"
   },
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Agilatech/versalink-tsl2561-device#readme",
   "dependencies": {
     "versalink-device": "*",
+    "zetta-scout": "*",
     "@agilatech/tsl2561": "*"
   }
 }

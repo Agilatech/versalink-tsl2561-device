@@ -1,0 +1,7 @@
+{
+    "streamPeriod": 10000,
+    "devicePoll": 1000,
+    "deltaPercent": 5,
+    "bus":"/dev/i2c-1",
+    "addr":57
+}

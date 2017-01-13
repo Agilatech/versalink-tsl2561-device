@@ -10,7 +10,7 @@
 
 const fs     = require('fs');
 const zetta  = require('zetta');
-const sensor = require('./tsl2561-scout');
+const sensor = require('../tsl2561-scout');
 const app    = require('./apps/tsl2561_app');
 
 const serverPort  = 1107;  // IIOT port definied and claimed by Agilatech
