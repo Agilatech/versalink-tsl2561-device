@@ -6,19 +6,15 @@ This device driver is specifically designed to be used with the Agilatech VersaL
 ```
 $> npm install versalink-tsl2561-device
 ```
-OR
-```
-$> git clone https://github.com/Agilatech/versalink-tsl2561-device versalink-tsl2561-device
-```
 
 ###Usage
-This device driver may be consumed by either the Agilatech VersaLink IOT system, or the
-Apigee Zetta system.
+This device driver is designed to be consumed by the Agilatech VersaLink IOT system.
 ```
-var zetta = require('zetta');
-var tsl2561 = require('versalink-tsl2561-device');
+var tsl2561 = require('@agilatech/versalink-tsl2561-device');
 
-zetta()
+const versalink = require('@agilatech/versalink-server');
+
+versalink()
 .use(tsl2561, [options])  // where [options] define operational paramters -- omit to accept defaults
 .listen(<port number>)   // where <port number> is the port on which the zetta server should listen
 ```
@@ -79,16 +75,16 @@ Agilatech has definied the open port number 1107 as its standard default for IIO
 
 
 ###Example
-Using directly in the zetta server, and accepting all defaults:
+Using directly in the versalink server, and accepting all defaults:
 ```
-const zetta = require('zetta');
-const sensor = require('versalink-tsl2561-device');
-zetta().use(sensor).listen(1107);
+const versalink = require('@agilatech/versalink');
+const sensor = require('@agilatech/versalink-tsl2561-device');
+versalink().use(sensor).listen(1107);
 ```
 
 To easily specify some options, simply supply them in an object in the use statement like this:
 ```
-zetta().use(sensor, { "bus":"/dev/i2c-0", "addr":0x49, devicePoll":8000, "streamPeriod":15000 });
+versalink().use(sensor, { "bus":"/dev/i2c-0", "addr":0x49, devicePoll":8000, "streamPeriod":15000 });
 ```
 Overrides the defaults to initialize the bus on **/dev/i2c-0** at address **0x39** with a data monitoring period of **8 seconds** and streaming data every **15 seconds**
 
@@ -138,14 +134,3 @@ The luminosity unit of measure is LUX, where LUX is the SI unit of illuminance a
 ###Copyright
 Copyright © 2016 Agilatech. All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
-files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
-modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the 
-Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
