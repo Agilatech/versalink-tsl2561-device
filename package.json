@@ -1,6 +1,6 @@
 {
   "name": "@agilatech/versalink-tsl2561-device",
-  "version": "0.10.0",
+  "version": "1.0.0",
   "description": "TSL2561 luminosity device driver for use in the Agilatech VersaLink system",
   "main": "tsl2561-scout.js",
   "repository": {
