@@ -1,9 +1,8 @@
 const config = require('./config');
-
-const Scout = require('zetta-scout');
+const Scout = require(process.versalink.scout);
 const Tsl2561 = require('./tsl2561');
 
-module.exports = class DeviceModelnameScout extends Scout {
+module.exports = class Tsl2561Scout extends Scout {
 
   constructor(opts) {
 
@@ -21,7 +20,7 @@ module.exports = class DeviceModelnameScout extends Scout {
     if (config.name === undefined) { config.name = "TSL2561" }
     this.name = config.name;
 
-    this.tsl2561 = new DeviceModelname(config);
+    this.tsl2561 = new Tsl2561(config);
 
   }
 
